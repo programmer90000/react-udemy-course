@@ -13,11 +13,15 @@ function App() {
 
     useEffect(function () { getAdvice() }, []);
 
+    function Message(props) {
+        return (<p>You have read <strong>{props.count}</strong> pieces of advice</p>)
+    }
+
     return (
         <div>
             <h1>{advice}</h1>
             <button onClick={getAdvice}>Get advice</button>
-            <p>You have read <strong>{count}</strong> pieces of advice</p>
+            <Message count={count} />
         </div>
     )
 }
