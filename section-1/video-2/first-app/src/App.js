@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
     const [advice, setAdvice] = useState("");
@@ -10,6 +10,8 @@ function App() {
         setAdvice(data.slip.advice);
         setCount((c) => c + 1);
     }
+
+    useEffect(function () { getAdvice() }, []);
 
     return (
         <div>
