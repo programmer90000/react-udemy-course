@@ -30,7 +30,7 @@ function Menu() {
         <main className="menu">
             <h2>Our menu</h2>
             <ul className="pizzas">
-                {numPizzas > 0 ? (pizzas.map(pizza => <Pizza pizzaObject={pizza} key={pizza.name} />)) : <p>We're still working on our menu. Please come back later :)</p>}
+                {numPizzas > 0 ? (pizzas.map(pizza => <Pizza pizzaObj={pizza} key={pizza.name} />)) : <p>We're still working on our menu. Please come back later :)</p>}
             </ul>
         </main>
     )
@@ -57,16 +57,17 @@ function Order(props) {
     )
 }
 
-function Pizza(props) {
-    console.log(props);
-    if (props.pizzaObject.soldOut) return null;
+function Pizza({ pizzaObj }) {
+    console.log(pizzaObj);
+
+    if (pizzaObj.soldOut) return null;
     return (
         <li className="pizza">
-            <img src={props.pizzaObject.photoName} alt={props.pizzaObject.name} />
+            <img src={pizzaObj.photoName} alt={pizzaObj.name} />
             <div>
-                <h3>{props.pizzaObject.name}</h3>
-                <p>{props.pizzaObject.ingredients}</p>
-                <span>{props.pizzaObject.price}</span>
+                <h3>{pizzaObj.name}</h3>
+                <p>{pizzaObj.ingredients}</p>
+                <span>{pizzaObj.price}</span>
             </div>
         </li>
     )
