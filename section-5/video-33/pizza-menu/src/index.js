@@ -26,7 +26,7 @@ function Menu() {
     return (
         <main className="menu">
             <h2>Our menu</h2>
-            <ul>{pizzaData.map(pizza => <Pizza pizzaObject={pizza} key={pizza.name} />)}</ul>
+            <ul className="pizzas">{pizzaData.map(pizza => <Pizza pizzaObject={pizza} key={pizza.name} />)}</ul>
         </main>
     )
 }
