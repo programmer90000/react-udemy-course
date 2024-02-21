@@ -25,6 +25,7 @@ function Menu() {
     return (
         <main className="menu">
             <h2>Our menu</h2>
+            <div></div>
             <Pizza name="Pizza Spinachi" ingredients="Tomato, mozarella, spinach, and ricotta cheese" photoName="pizzas/spinaci.jpg" price="10" />
             <Pizza name="Pizza Funghi" ingredients="Tomato, mushrooms" price="12" photoName="pizzas/funghi.jpg" />
             <Pizza />
@@ -40,10 +41,12 @@ function Footer() {
 function Pizza(props) {
     console.log(props);
     return (
-        <div>
+        <div className="pizza">
             <img src={props.photoName} alt={props.name} />
-            <h3>{props.name}</h3>
-            <p>{props.ingredients}</p>
+            <div>
+                <h3>{props.name}</h3>
+                <p>{props.ingredients}</p>
+            </div>
         </div>
     )
 }
