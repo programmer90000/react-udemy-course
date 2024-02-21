@@ -153,6 +153,8 @@ body {
 
 .footer {
   font-size: 1.4rem;
+  text-align: center;
+  margin-top: 40px;
 }
 
 .order {
