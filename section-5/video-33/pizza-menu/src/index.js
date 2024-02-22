@@ -29,10 +29,19 @@ function Menu() {
     return (
         <main className="menu">
             <h2>Our menu</h2>
-            <ul className="pizzas">
-                {numPizzas > 0 ? (pizzas.map(pizza => <Pizza pizzaObj={pizza} key={pizza.name} />)) : <p>We're still working on our menu. Please come back later :)</p>}
-            </ul>
-        </main>
+            {numPizzas > 0 ? (
+                <>
+                    <p>Authentic Italian cusine. 6 creative dishes to choose from. All from our stone oven, all organinc, all delicious.</p>
+                    <ul className="pizzas">
+                        {pizzas.map((pizza) => (
+                            <Pizza pizzaObj={pizza} key={pizza.name} />
+                        ))}
+                    </ul>
+                </>
+            ) : (
+                <p>We're still working on our menu. Please come back later :)</p>
+            )}
+        </main >
     )
 }
 
