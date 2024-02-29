@@ -14,12 +14,12 @@ function Counter() {
     const [count, setCount] = useState(0);
 
     function incrementStep() {
-        setStep(step => step + 1);
+        setStep(step => step + count);
     }
 
     function decrementStep() {
-        if (step >= 1) {
-            setStep(step => step - 1);
+        if (step >= count) {
+            setStep(step => step - count);
         }
     }
 
