@@ -30,6 +30,14 @@ function Counter() {
     function decrementCount() {
         setCount(count => count + 1);
     }
+
+    return (
+        <div>
+            <div><button>-</button> <span>Step: {step}</span> <button>+</button></div>
+            <br />
+            <div><button>-</button> <span>Count: {count}</span> <button>+</button></div>
+        </div>
+    )
 }
 
 export default App;
