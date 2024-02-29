@@ -28,14 +28,16 @@ function Counter() {
     }
 
     function decrementCount() {
-        setCount(count => count + 1);
+        if (count >= 1) {
+            setCount(count => count - 1);
+        }
     }
 
     return (
         <div>
-            <div><button>-</button> <span>Step: {step}</span> <button>+</button></div>
+            <div><button onClick={decrementStep}>-</button> <span>Step: {step}</span> <button onClick={incrementStep}>+</button></div>
             <br />
-            <div><button>-</button> <span>Count: {count}</span> <button>+</button></div>
+            <div><button onClick={decrementCount}>-</button> <span>Count: {count}</span> <button onClick={incrementCount}>+</button></div>
         </div>
     )
 }
