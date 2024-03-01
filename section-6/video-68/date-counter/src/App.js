@@ -15,22 +15,22 @@ function Counter() {
     const [count, setCount] = useState(0);
 
     function incrementStep() {
-        setStep(step => step + count);
+        setStep(step => step + 1);
     }
 
     function decrementStep() {
         if (step >= count) {
-            setStep(step => step - count);
+            setStep(step => step - 1);
         }
     }
 
     function incrementCount() {
-        setCount(count => count + 1);
+        setCount(count => count + step);
     }
 
     function decrementCount() {
         if (count >= 1) {
-            setCount(count => count - 1);
+            setCount(count => count - step);
         }
     }
 
