@@ -21,19 +21,30 @@ function Counter() {
     const [date, setDate] = useState("");
     const [month, setMonth] = useState("");
     const [year, setYear] = useState("");
+    const [dateText, setDateText] = useState("");
 
     // Set date as soon as page loads
     useEffect(() => {
         setDayNames(["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]);
         setMonthNames(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]);
         const today = new Date();
-        today.setDate(today.getDate() + count);
-        console.log(today);
 
+        today.setDate(today.getDate() + count);
         setDay(dayNames[today.getDay()]);
         setMonth(monthNames[today.getMonth()]);
         setDate(today.getDate());
         setYear(today.getFullYear());
+
+        if (count === 0) {
+            setDateText(`Today is ${day} ${month} ${date} ${year}`);
+        } else {
+            today.setDate(today.getDate() + count);
+            setDay(dayNames[today.getDay()]);
+            setMonth(monthNames[today.getMonth()]);
+            setDate(today.getDate());
+            setYear(today.getFullYear());
+            setDateText(`${count} days from now is ${day} ${month} ${date} ${year}`);
+        }
     })
 
     // Functions to increment and decrement the step and count values
@@ -63,7 +74,7 @@ function Counter() {
             <br />
             <div><button onClick={decrementCount}>-</button> <span>Count: {count}</span> <button onClick={incrementCount}>+</button></div>
             <br />
-            <div>Today is {day} {month} {date} {year}</div>
+            <div>{dateText}</div>
         </div>
     )
 }
