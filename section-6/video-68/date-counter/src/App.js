@@ -10,6 +10,7 @@ function App() {
 }
 
 function Counter() {
+    // Define States
     const [step, setStep] = useState(0);
     const [count, setCount] = useState(0);
 
@@ -21,6 +22,7 @@ function Counter() {
     const [month, setMonth] = useState("");
     const [year, setYear] = useState("");
 
+    // Set date as soon as page loads
     useEffect(() => {
         setDayNames(["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]);
         setMonthNames(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]);
@@ -32,6 +34,7 @@ function Counter() {
         setYear(today.getFullYear());
     })
 
+    // Functions to increment and decrement the step and count values
     function incrementStep() {
         setStep(step => step + 1);
     }
