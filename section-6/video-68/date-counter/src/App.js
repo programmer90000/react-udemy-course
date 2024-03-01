@@ -53,7 +53,7 @@ function Counter() {
     }
 
     function decrementStep() {
-        if (step >= count) {
+        if (step > 1) {
             setStep(step => step - 1);
         }
     }
@@ -63,7 +63,7 @@ function Counter() {
     }
 
     function decrementCount() {
-        if (count >= 1) {
+        if (count >= step) {
             setCount(count => count - step);
         }
     }
