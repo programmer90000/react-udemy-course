@@ -27,6 +27,8 @@ function Counter() {
         setDayNames(["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]);
         setMonthNames(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]);
         const today = new Date();
+        today.setDate(today.getDate() + count);
+        console.log(today);
 
         setDay(dayNames[today.getDay()]);
         setMonth(monthNames[today.getMonth()]);
