@@ -45,7 +45,7 @@ function Item({ item }) {
 function PackingList() {
     return (
         <div className="list">
-            <ul>{initialItems.map(item => <Item item={item} />)}</ul>
+            <ul>{initialItems.map(item => <Item item={item} key={item.key} />)}</ul>
         </div>
     )
 }
