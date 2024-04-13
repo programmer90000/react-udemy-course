@@ -22,12 +22,19 @@ function Logo() {
 }
 
 function Form() {
-    const [quantity, setQuantity] = useState(5);
+    const [quantity, setQuantity] = useState(1);
     const [description, setDescription] = useState("");
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(e);
+
+        if (!description) return;
+
+        const newItem = { description, quantity, packed: false, id: Date.now() };
+        console.log(newItem);
+
+        setDescription("");
+        setQuantity(1);
     }
     return (
         <form className="add-form" onSubmit={handleSubmit}>
