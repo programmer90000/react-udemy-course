@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./index.css";
 
 function App() {
@@ -42,7 +43,17 @@ const questions = [
 ];
 
 function FlashCards() {
-    return <div>TODO</div>;
+    const [selectedId, setSelectedId] = useState(9103);
+
+    return (
+        <div className="flashcards">
+            {questions.map((question) => (
+                <div key={question.id}>
+                    <p>{question.id === selectedId ? question.answer : question.question}</p>
+                </div>
+            ))}
+        </div>
+    )
 }
 
 export default App;
