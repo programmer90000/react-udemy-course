@@ -80,7 +80,7 @@ function Counter() {
             <div><button onClick={decrementCount}>-</button> <input type="text" value={count} onChange={(e) => setCount(Number(e.target.value))} /> <button onClick={incrementCount}>+</button></div>
             <br />
             <div>{dateText}</div>
-            <button onClick={handleReset}>Reset</button>
+            {(count !== 0 || step !== 0) ? <button onClick={handleReset}>Reset</button> : null}
         </div>
     )
 }
