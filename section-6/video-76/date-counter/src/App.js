@@ -68,6 +68,11 @@ function Counter() {
         }
     }
 
+    function handleReset() {
+        setStep(0);
+        setCount(0);
+    }
+
     return (
         <div>
             <input type="range" min="0" max="10" value={step} onChange={(e) => setStep(Number(e.target.value))} /> <span>Step: {step}</span>
@@ -75,6 +80,7 @@ function Counter() {
             <div><button onClick={decrementCount}>-</button> <input type="text" value={count} onChange={(e) => setCount(Number(e.target.value))} /> <button onClick={incrementCount}>+</button></div>
             <br />
             <div>{dateText}</div>
+            <button onClick={handleReset}>Reset</button>
         </div>
     )
 }
